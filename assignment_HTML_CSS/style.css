@@ -4,3 +4,23 @@ table{
 th, td{
     border-style:solid;
 }
+
+tbody tr:nth-child(odd) td {
+    background-color: lightgreen;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: lightblue;
+}
+
+.outer-content{
+    background-color:  pink;
+    padding: 20px;
+    width: 75%;
+}
+
+.inner-content{
+    background-color: lightblue;
+    width: 75%;
+    margin: auto
+}

@@ -59,11 +59,129 @@
                 <td>Unknown</td>
                 <td>N/A</td>
             </tr>
-            <tr>
+            <tfoot>
                 <td colspan="2">Footer 1</td>
                 <td colspan="4">Footer 2</td>
-            </tr>
+            </tfoot>
         </tbody>
     </table>
+    <dl>
+        <dt>Best Language</dt>
+        <li>Python</li>
+        <dt>Wackiest Language</dt>
+        <li>Haskell</li>
+        <dt>SEGFAULTiest Language</dt>
+        <li>C</li>
+    </dl>
+
+    <div class="outer-content" align="left">   
+            <div class="inner-content" align="center">
+                Here is some content
+            </div>      
+    </div>
+    
+    <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method ="GET">
+        <fieldset>
+            <legend>Some Get Data</legend>
+
+            <br />
+            <fieldset>
+            <label>Text Here:
+                <input type = "text" name = "text_input" size = "30" maxlength= "100">
+            </label>
+            </fieldset>    
+            
+            <br />
+            
+            <fieldset>
+                <label>Number Here:
+                <input type = "number" name = "number_input" size = "30" maxlength= "100">
+                </label>
+            </fieldset> 
+            
+            <br />
+
+            <fieldset>
+                <label>Password Here:
+                <input type = "text" name = "password_input" size = "30" maxlength= "100">
+                </label>
+            </fieldset> 
+            <br />
+            <fieldset>
+                <label>Select between:</label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Snickers" />Snickers
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Skittles" />Skittles
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Mentos" />Mentos
+                </label>
+                <br />
+                <br />
+                <input type = "submit" value="Submit" />
+            </fieldset>
+        </fieldset>
+    </form>
+    
+    <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" method ="POST">
+        <fieldset>
+            <legend>Some Post Data</legend>
+
+            <br />
+            <fieldset>
+            <label>Text Here:
+                <input type = "text" name = "text_input" size = "30" maxlength= "100">
+            </label>
+            </fieldset>    
+            
+            <br />
+            
+            <fieldset>
+                <label>Number Here:
+                <input type = "number" name = "number_input" size = "30" maxlength= "100">
+                </label>
+            </fieldset> 
+            
+            <br />
+
+            <fieldset>
+                <label>Password Here:
+                <input type = "text" name = "password_input" size = "30" maxlength= "100">
+                </label>
+            </fieldset> 
+            <br />
+            <fieldset>
+                <label>Select between:</label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Snickers" />Snickers
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Skittles" />Skittles
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type = "radio" name = "candy" value = "Mentos" />Mentos
+                </label>
+                <br />
+                <br />
+                <input type = "submit" value="Submit" />
+            </fieldset>
+        </fieldset>
+    </form>
+
+
  </body>
 </html>
