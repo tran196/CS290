@@ -156,25 +156,19 @@ As an example of the content in the parenthesis:
 console.log("*****");
 
 console.log("The cars sorted by year are:");
-console.log("year make model of the 'greatest' car");
 var autoByYear = sortArr(yearComparator, automobiles);
 printAll(autoByYear, false);
-console.log("year make model of the 'least' car");
 
 console.log("\n");
 
 console.log("The cars sorted by make are:");
-console.log("year make model of the 'greatest' car");
 var autoByMake = sortArr(makeComparator, automobiles);
 printAll(autoByMake, false);
-console.log("year make model of the 'least' car");
 
 console.log("\n");
 
 console.log("The cars sorted by type are:");
-console.log("year make model type of the 'greatest' car");
 var autoByType = sortArr(typeComparator, automobiles);
 printAll(autoByType, true);
-console.log("year make model type of the 'least' car");
 
 console.log("*****");
