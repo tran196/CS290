@@ -11,7 +11,6 @@
 
 function generateTable()
 {
-    
     var body = document.getElementsByTagName("body")[0]; //This creates a reference so we can add the table to the body at the end of the function
 
     var createTable = document.createElement("table");  //Creating the table
@@ -21,33 +20,163 @@ function generateTable()
 
     for(var i = 0; i < 4; i++)
     {
-        var createRow = document.createElement("tr");   //Creating the rows of the 4x4 table
-        
-        for(var j = 0; j < 4; j++)
+
+        var createNewRow = document.createElement("tr");
+
+        for (var j = 0; j < 4; j++)
         {
-            if(i == 0)                                  //Logic to create the header rows of the table. It adds the text plus the index + 1 (since j is set to 0)
+            if (i == 0)
             {
-                var tableHead = document.createElement("th");
-                var tableHeadText = document.createTextNode("Header " + (j + 1));
-                tableHead.appendChild(tableHeadText);   //Append the text node to each header cell
-                createRow.appendChild(tableHead);
+                var createTableHead = document.createElement("th");
+                var tableHeadText   = document.createTextNode("Header " + (j + 1));
+                createTableHead.append(tableHeadText);
+                createNewRow.appendChild(createTableHead);
             }
-            
+
             else
             {
-                var normalCell = document.createElement("td");  //The logic that will run to create the rest of the table
-                var normalCellText = document.createTextNode((i) + ', ' + (j + 1));     //The location of each cell
-                normalCell.appendChild(normalCellText);     //Add the location text to the cell
-                createRow.appendChild(normalCell);          //Add the cell to the table itself
+                var regularCell = document.createElement("td");  
+                var regularCellText = document.createTextNode((i) + ', ' + (j + 1));     
+                regularCell.appendChild(regularCellText);    
+                createNewRow.appendChild(regularCell);          
             }
         }
-        
-        createTableBody.appendChild(createRow);             //Append each row to the table
+
+        createTableBody.appendChild(createNewRow); 
     }
     
     createTable.appendChild(createTableBody);
-    body.appendChild(createTable);                       //Puts the table in the document
-    createTable.setAttribute("border", "1.5px");            //Sets the default border for the table
+    body.appendChild(createTable);                       
+    createTable.setAttribute("border", "4px");         
 }
 
+function upMove()
+{
+    current = document.getElementById("this");            
+    if(current.parentNode.rowIndex <= 1)                  
+    { 
+        return;                                             
+    }
+    var holder = current.cellIndex;                      
+    current.style.borderWidth = "1px";    
+    current.removeAttribute("id");                        
+    current = current.parentNode;
+    current = current.previousElementSibling;
+    current = current.firstElementChild;                  
+    for(var i =0; i < holder; i++)                        
+    {                         
+        current = current.nextElementSibling;
+    }
+    current.style.borderWidth = "8px";                   
+    current.id = "this";   
+
+}
+
+function downMove(){
+    current = document.getElementById("this"); 
+    if(current.parentNode.rowIndex == 3)                        
+    { 
+      return;
+    }
+    var holder = current.cellIndex; 
+    current.style.borderWidth = "1px"; 
+    current.removeAttribute("id"); 
+    current = current.parentNode;
+    current = current.nextElementSibling;
+    current = current.firstElementChild;                 
+    for(var i = 0; i < holder; i++)
+    { 
+      current = current.nextElementSibling;
+    }
+    current.style.borderWidth = "8px";
+    current.id = "this"; 
+  }
+
+function leftMove(){
+    current = document.getElementById("this"); 
+    if(current.cellIndex == 0)                        
+    { 
+      return;
+    }
+    current.style.borderWidth = "1px"; 
+    current.removeAttribute("id"); 
+    current = current.previousElementSibling; 
+    current.style.borderWidth = "8px"; 
+    current.id = "this"; 
+  }
+
+
+function rightMove(){
+    current = document.getElementById("this"); 
+    if(current.cellIndex == 3)                        
+    { 
+      return;
+    }
+    current.style.borderWidth = "1px"; 
+    current.removeAttribute("id"); 
+    current = current.nextElementSibling; 
+    current.style.borderWidth = "8px"; 
+    current.id = "this"; 
+  }
+
+function markCell(){
+    current = document.getElementById("this");      
+    current.style.backgroundColor = "yellow";      
+}
+
+/*
+This criterion is linked to a Learning Outcome the form: 4 directional buttons (up, down, left right)
+•	‘selected’ section moves with the buttons pushing ---- 0.5 point each (2 points in total) 
+•	If you are already on the top row and hit 'up' nothing should happen 
+        (you should not be able to move into the header cells). 
+        Likewise if you are all the way right and hit right or all the way at the bottom and hit down 
+        ---- 0.5 point each (2 points in total)
+*/
+
+    //  UP
+    var upButton = document.createElement("button");      
+    upButton.id = "up";
+    var upButtonText = document.createTextNode("Up");
+    upButton.appendChild(upButtonText);
+    document.body.appendChild(upButton);  
+
+    //  DOWN
+    var downButton = document.createElement("button");    
+    downButton.id = "down";
+    var downButtonText = document.createTextNode("Down");
+    downButton.appendChild(downButtonText);
+    document.body.appendChild(downButton);
+
+    //  LEFT
+    var leftButton = document.createElement("button");     
+    leftButton.id = "left";
+    var leftButtonText = document.createTextNode("Left");
+    leftButton.appendChild(leftButtonText);
+    document.body.appendChild(leftButton);
+
+    //  RIGHT
+    var rightButton = document.createElement("button");       
+    rightButton.id = "right";
+    var rightButtonText = document.createTextNode("Right");
+    rightButton.appendChild(rightButtonText);
+    document.body.appendChild(rightButton);
+
+    //  MARKBUTTON
+    var markButton = document.createElement("button");        
+    markButton.id = "mark";
+    var markButtonText = document.createTextNode("Mark Cell");
+    markButton.appendChild(markButtonText);
+    document.body.appendChild(markButton);
+
 generateTable();
+
+
+var current = document.getElementsByTagName("td")[0];  
+current.id = "this"; 
+current.style.borderWidth = "8px"; 
+
+document.getElementById("up").addEventListener("click", upMove); 
+document.getElementById("down").addEventListener("click", downMove); 
+document.getElementById("left").addEventListener("click", leftMove); 
+document.getElementById("right").addEventListener("click", rightMove); 
+document.getElementById("mark").addEventListener("click", markCell); 
