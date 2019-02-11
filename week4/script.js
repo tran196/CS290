@@ -50,6 +50,17 @@ function generateTable()
     createTable.setAttribute("border", "4px");         
 }
 
+
+/*
+This criterion is linked to a Learning Outcome the form: 4 directional buttons (up, down, left right)
+•	‘selected’ section moves with the buttons pushing ---- 0.5 point each (2 points in total) 
+•	If you are already on the top row and hit 'up' nothing should happen 
+        (you should not be able to move into the header cells). 
+        Likewise if you are all the way right and hit right or all the way at the bottom and hit down 
+        ---- 0.5 point each (2 points in total)
+*/
+
+
 function upMove()
 {
     current = document.getElementById("this");            
@@ -119,19 +130,19 @@ function rightMove(){
     current.id = "this"; 
   }
 
+/*
+This criterion is linked to a Learning Outcome The form: A button labeled "Mark Cell"
+•	Hitting the "Mark Cell" button should permanently change the background of the selected cell to yellow 
+        ---- 0.5 point 
+•	This should persist even after other cells are selected or marked ---- 0.5 point
+*/
+
 function markCell(){
     current = document.getElementById("this");      
     current.style.backgroundColor = "yellow";      
 }
 
-/*
-This criterion is linked to a Learning Outcome the form: 4 directional buttons (up, down, left right)
-•	‘selected’ section moves with the buttons pushing ---- 0.5 point each (2 points in total) 
-•	If you are already on the top row and hit 'up' nothing should happen 
-        (you should not be able to move into the header cells). 
-        Likewise if you are all the way right and hit right or all the way at the bottom and hit down 
-        ---- 0.5 point each (2 points in total)
-*/
+
 
     //  UP
     var upButton = document.createElement("button");      
