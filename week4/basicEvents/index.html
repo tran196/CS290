@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Basic Events</title>
+  </head>
+  <body>
+    <script src="buttons.js"></script>
+
+    <div id="buttonHolder">
+        <button id="innerButton">Nested Button</button>
+    </div>
+    <input type="checkbox" id="check"></input>
+    <div id="output"></div>
+    <form>
+        <fieldset>
+            <legend>Event Controls</legend>
+            <label>
+                Button stop propagation
+            </label>
+            <input type="checkbox" id="propCheck"/><br>
+            
+            <label>
+                Checkbox prevent default
+            </label>
+            <input type="checkbox" id="defaultCheck"/>
+        </fieldset>
+    </form>
+  </body>
+</html>
