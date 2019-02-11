@@ -9,28 +9,30 @@
     the cell to its right "1, 2", the cell below it "2, 1" and so on.
 */
 
+
+// Citing source on how to create a table from stack overflow
+// https://stackoverflow.com/questions/14643617/create-table-using-javascript
+
 function generateTable()
 {
-    var body = document.getElementsByTagName("body")[0]; //This creates a reference so we can add the table to the body at the end of the function
+    var body = document.getElementsByTagName("body")[0]; 
 
-    var createTable = document.createElement("table");  //Creating the table
+    var tbl =  document.createElement("table");
     
-    
-    var createTableBody = document.createElement("tbody");   //Creating the body of the table
+    var tblBody = document.createElement("tbody");   
 
     for(var i = 0; i < 4; i++)
     {
-
         var createNewRow = document.createElement("tr");
 
         for (var j = 0; j < 4; j++)
         {
             if (i == 0)
             {
-                var createTableHead = document.createElement("th");
+                var tblHead = document.createElement("th");
                 var tableHeadText   = document.createTextNode("Header " + (j + 1));
-                createTableHead.append(tableHeadText);
-                createNewRow.appendChild(createTableHead);
+                tblHead.append(tableHeadText);
+                createNewRow.appendChild(tblHead);
             }
 
             else
@@ -42,12 +44,12 @@ function generateTable()
             }
         }
 
-        createTableBody.appendChild(createNewRow); 
+        tblBody.appendChild(createNewRow); 
     }
     
-    createTable.appendChild(createTableBody);
-    body.appendChild(createTable);                       
-    createTable.setAttribute("border", "4px");         
+    tbl.appendChild(tblBody);
+    body.appendChild(tbl);                       
+    tbl.setAttribute("border", "4px");         
 }
 
 
