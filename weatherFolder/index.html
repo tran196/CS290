@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <title>CS 290: Weather AJAX Interactions Tuan Tran</title>
+  </head>
+  <body>
+
+    <form>
+      <fieldset>
+        <legend>Enter a US city or zipcode</legend>
+        <input type="text" name="userInput" id="userInput">
+        <button id="zipcodeSubmit">Submit</button>
+    <div>
+        <br>
+        Weather in <span id="userInputDisplay"></span>
+      <ol>
+        <li><span>Temperature: </span><span id="tempDisplay"></span></li>
+      </ol>
+    </div>
+      </fieldset>
+    </form>
+    
+    <form>
+      <fieldset>
+        <legend>Enter something to post</legend>
+        <input type="text" name="form2input" id="form2input">
+        <button id="form2Submit">Submit</button>
+
+        <div>
+                response.data: <span id="responseData"></span>
+            </div>
+      </fieldset>
+    </form>
+    </br>
+   
+
+  </body>
+  <script src="script.js"></script>
+</html>
+
+
+
