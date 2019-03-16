@@ -1,0 +1,77 @@
+<h1>The Home Page: Database Interactions and UI</h1>
+
+<table id='exerciseTable'>
+    <form id="addExercise">
+
+    <thead>
+        <th>Name</th>
+        <th>Reps</th>
+        <th>Weight</th>
+        <th>Date</th>
+        <th>Unit(LBs)</th>
+    </thead>
+
+    <tr>
+    <td>    <input type="text" name="name" id="name">   </td>  
+    
+    <td>    <input type="number" name="reps" id="reps">         </td>
+
+    <td>    <input type="number" name="weight" id="weight">     </td>
+
+    <td>    <input type="date" name="date" id="date">           </td>   
+
+    <td>    <input type="number" name="unit" id="unit">         </td>
+
+    <td>
+        <button class="add-task btn btn-submit" type="submit">Submit</button>
+    <input type="button" value="update" onclick="deleteRow('exerciseTable',this)" />
+    <input type="button" value="delete" onclick="deleteRow('exerciseTable',this)" />
+    </td>
+    </tr>
+
+</form>
+</table>
+
+<body>
+ <table>
+    <thead>
+        <th>Name</th>
+        <th>Reps</th>
+        <th>Weight</th>
+        <th>Date</th>
+        <th>Unit(LBs)</th>
+    </thead>
+
+
+    {{!-- <form>
+    <fieldset>
+        <legend>Excercise Database</legend>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="reps">Reps</label>
+        <input type="number" name="reps" id="reps">
+        <br>
+        <label for="weight">Weight</label>
+        <input type="number" name="weight" id="weight">
+        <br>
+        <label for="date">Date</label>
+        <input type="text" name="date" id="date">
+        <br>
+        <label for="lbs">Lbs</label>
+        <input type="checkbox" name="unit" id="lbs">
+        <br><br>
+        <input type="button" id="submitButton" value="Add Excercise">
+    </fieldset>
+</form>
+<div>
+</div>
+<script src="./client.js"></script>
+
+     <tr>
+      <td></td>
+      
+     </tr>
+ </table>
+
+</body> --}}
