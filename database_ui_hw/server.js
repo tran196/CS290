@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 9112);
+app.set('port', 9114);
 
 pool.query("DROP TABLE IF EXISTS workoutTable", function(err){
     var createString = "CREATE TABLE workoutTable(" +
@@ -132,5 +132,5 @@ app.use(function(err, req, res, next){
 });
 
 app.listen(app.get('port'), function(){
-  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+  console.log('Express started on http://flip2.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
